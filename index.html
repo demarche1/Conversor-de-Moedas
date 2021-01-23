@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev.Exchange$</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,200;1,300;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 id="logo">dev.Exchenge$</h1>
+    </header>
+    <main id="container">
+        <section>
+            <h2>Cotações</h2>
+
+            <!-- Cotação USD -->
+            <div class="flexContainer">
+                <div class="card">
+                    <h3>Cotação USD $</h3>
+                    <input id="exchenge_value_USD"type="text" value="1">
+                    <input type="button" onfocus="estimate_USD()" value="Calcular">
+                    <p id="result_USD">R$ </p>
+                </div>
+            </div>
+
+            <!-- Cotação EUR -->
+            <div class="flexContainer">
+                <div class="card">
+                    <h3>Cotação EUR €</h3>
+                    <input id="exchenge_value_EUR"type="text" value="1">
+                    <input type="button"onclick="estimate_EUR()" value="Calcular">
+                    <p id="result_EUR">R$ </p>
+                </div>
+            </div>
+            <!-- Cotação GBP -->
+            <div class="flexContainer">
+                <div class="card">
+                    <h3>Cotação GBP £</h3>
+                    <input id="exchenge_value_GBP"type="text" value="1">
+                    <input type="button"onclick="estimate_GBP()"  value="Calcular">
+                    <p id="result_GBP">R$ </p>
+                </div>
+            </div>
+            <!-- Cotação CAD -->
+            <div class="flexContainer">
+                <div class="card">
+                    <h3>Cotação CAD C$ </h3>
+                    <input id="exchenge_value_CAD"type="text" value="1">
+                    <input type="button"onclick="estimate_CAD()" value="Calcular">
+                    <p id="result_CAD">R$ </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>dev.Exchenge$ / Made by: Alessandro</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
