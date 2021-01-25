@@ -71,9 +71,15 @@ function estimate_JPY(){
     })
     .then((data) => {
         let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(3)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
+        let showResult = () => {
+            if((rate * value) < 1){
+                return `R$ ${(rate * value).toFixed(3)}`
+            }
+            else{
+                return`R$ ${(rate * value).toFixed(2)}`
+            }
+        }
+        document.getElementById("exchenge_result").innerHTML = showResult()
     })
 }
 
