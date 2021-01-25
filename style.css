@@ -68,7 +68,7 @@ h2{
     opacity: .7;
 }
 
-.card [type="text"]{
+.card [type="number"]{
     color: var(--dark-blue);
     padding: .5rem;
     font-size: 1rem;
