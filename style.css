@@ -104,3 +104,9 @@ footer{
     color: var(--dark-blue);
     opacity: .6;
 }
+
+@media screen and (max-width: 450px){
+    .card [type="number"]{
+        width: 150px;
+    }
+}
