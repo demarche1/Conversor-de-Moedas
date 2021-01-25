@@ -1,5 +1,4 @@
 :root{
-    --green-color: #4f8a3a;
     --dark-blue: #363f5f;
 }
 *{
@@ -16,12 +15,12 @@ body{
 #container{
     width: min(90vw, 600px);
     margin: auto;
-    margin-top: -6rem;
+    margin-top: -8rem;
 }
 
 /* ### Header */
 header{
-    background-color: var(--green-color);
+    background-color: #4f8a3a;
     padding: 2rem 0 10rem;
     text-align: center;  
 }
@@ -29,6 +28,11 @@ header{
 #logo{
     font-weight: 300;
     color: white;
+}
+
+header img {
+    width: 300px;
+    margin-top: 2rem;
 }
 
 /* ### Exchenge Section */
@@ -75,28 +79,21 @@ h2{
 
 }
 
-.card [type="button"]{
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 0.25rem;
-    border: .10rem solid grey;
-    color: #fff;
-    background-color: var(--green-color);
-    opacity: .9;
-    outline: none;
-    cursor: pointer;
-    
-}
-
-.card [type="button"]:hover{
-    opacity: 1;
-}
-
 .card p{
     color: var(--dark-blue);
     font-size: 1.5rem;
     margin-top: 0.8rem;
     opacity: .7;
+}
+.card select{
+    color: var(--dark-blue);
+    border: .10rem solid gray;
+    background-color: #fff;
+    padding: .5rem;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 0.20rem;
+    opacity: .8;
 }
 
 /* ### Footer */
