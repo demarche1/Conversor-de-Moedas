@@ -27,8 +27,8 @@
             <div class="flexContainer">
                 <div class="card">
                     <h3 id="title_date"></h3>
-                    <input onmouseout="exchenge()" id="exchenge_value"type="number" value="1">
-                    <select onkeypress="exchenge()" onmouseout="exchenge()" name="" id="select">
+                    <input onmouseout="exchenge()" id="exchenge_value" type="number" value="1">
+                    <select onkeypress="exchenge()" onmouseout="exchenge()" name="currency_options" id="select">
                         <option value="USD">USD</option>
                         <option value="CAD">CAD</option>
                         <option value="GBP">GBP</option>
@@ -70,7 +70,7 @@
     <footer>
         <p>dev.Exchenge$ / Made by: Alessandro</p>
     </footer>
-    <script onload="estimate_USD(), date()" src="main.js"></script>
+    <script onload="exchenge(), date()" src="main.js"></script>
 </body>
 
 </html>

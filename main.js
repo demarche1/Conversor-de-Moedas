@@ -1,493 +1,18 @@
 
 
-// Estimate functions
-
-function estimate_USD(){
+function estimate(currency){
     let input = document.getElementById("exchenge_value")
     let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=USD")
+    fetch(`https://api.exchangeratesapi.io/latest?base=${currency}`)
     .then((result) => {
         return result.json()
     })
     .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
+        let rate = data.rates.BRL * value
+        let result = rate.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        document.getElementById("exchenge_result").innerHTML = result
     })
 }
-
-function estimate_CAD(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=CAD")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_GBP(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=GBP")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_EUR(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=EUR")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_JPY(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=JPY")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = () => {
-            if((rate * value) < 1){
-                return `R$ ${(rate * value).toFixed(3)}`
-            }
-            else{
-                return`R$ ${(rate * value).toFixed(2)}`
-            }
-        }
-        document.getElementById("exchenge_result").innerHTML = showResult()
-    })
-}
-
-function estimate_CNY(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=CNY")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_AUD(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=AUD")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_HKD(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=HKD")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_ISK(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=ISK")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(3)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_PHP(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=PHP")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_DKK(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=DKK")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_HUF(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=HUF")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(3)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_CZK(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=CZK")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_RON(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=RON")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_SEK(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=SEK")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_IDR(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=IDR")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(5)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_INR(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=INR")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_RUB(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=RUB")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_HRK(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=HRK")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_THB(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=THB")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_CHF(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=CHF")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_MYR(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=MYR")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_BGN(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=BGN")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_TRY(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=TRY")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_NOK(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=NOK")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_NZD(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=NZD")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_ZAR(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=ZAR")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_MXN(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=MXN")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_SGD(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=SGD")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_ILS(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=ILS")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_KRW(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=KRW")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(4)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-
-function estimate_PLN(){
-    let input = document.getElementById("exchenge_value")
-    let value = Number(input.value)
-    fetch("https://api.exchangeratesapi.io/latest?base=PLN")
-    .then((result) => {
-        return result.json()
-    })
-    .then((data) => {
-        let rate = data.rates.BRL
-        let showResult = `R$ ${(rate * value).toFixed(2)}`
-        document.getElementById("exchenge_result").innerHTML = showResult
-
-    })
-}
-/////////////////////////
 
 function date(){
     fetch("https://api.exchangeratesapi.io/latest?base=USD")
@@ -505,103 +30,107 @@ function exchenge(){
     let select = document.getElementById("select").value
     try{
         if(select == "USD"){
-            estimate_USD()
+            estimate(select)
         }
         if(select == "CAD"){
-            estimate_CAD()
+            estimate(select)
         }
         if(select == "GBP"){
-            estimate_GBP()
+            estimate(select)
         }
         if(select == "EUR"){
-            estimate_EUR()
+            estimate(select)
         }
         if(select == "JPY"){
-            estimate_JPY()
+            estimate(select)
         }
         if(select == "CNY"){
-            estimate_CNY()
+            estimate(select)
         }
         if(select == "AUD"){
-            estimate_AUD()
+            estimate(select)
         }
         if(select == "HKD"){
-            estimate_HKD()
+            estimate(select)
         }
         if(select == "ISK"){
-            estimate_ISK()
+            estimate(select)
         }
         if(select == "PHP"){
-            estimate_PHP()
+            estimate(select)
         }
         if(select == "DKK"){
-            estimate_DKK()
+            estimate(select)
         }
         if(select == "HUF"){
-            estimate_HUF()
+            estimate(select)
         }
         if(select == "CZK"){
-            estimate_CZK()
+            estimate(select)
         }
         if(select == "RON"){
-            estimate_RON()
+            estimate(select)
         }
         if(select == "SEK"){
-            estimate_SEK()
+            estimate(select)
         }
         if(select == "IDR"){
-            estimate_IDR()
+            estimate(select)
         }
         if(select == "INR"){
-            estimate_INR()
+            estimate(select)
         }
         if(select == "RUB"){
-            estimate_RUB()
+            estimate(select)
         }
         if(select == "HRK"){
-            estimate_HRK()
+            estimate(select)
         }
         if(select == "THB"){
-            estimate_THB()
+            estimate(select)
         }
         if(select == "CHF"){
-            estimate_CHF()
+            estimate(select)
         }
         if(select == "MYR"){
-            estimate_MYR()
+            estimate(select)
         }
         if(select == "BGN"){
-            estimate_BGN()
+            estimate(select)
         }
         if(select == "TRY"){
-            estimate_TRY()
+            estimate(select)
         }
         if(select == "NOK"){
-            estimate_NOK()
+            estimate(select)
         }
         if(select == "NZD"){
-            estimate_NZD()
+            estimate(select)
         }
         if(select == "ZAR"){
-            estimate_ZAR()
+            estimate(select)
         }
         if(select == "MXN"){
-            estimate_MXN()
+            estimate(select)
         }
         if(select == "SGD"){
-            estimate_SGD()
+            estimate(select)
         }
         if(select == "ILS"){
-            estimate_ILS()
+            estimate(select)
         }
         if(select == "KRW"){
-            estimate_KRW()
+            estimate(select)
         }
         if(select == "PLN"){
-            estimate_PLN()
+            estimate(select)
         }
     }
     catch(err){
         alert("Aconteceu algum erro, desculpe pelo o incoveniênte")
     }
 }
+
+
+
+
