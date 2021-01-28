@@ -1,6 +1,7 @@
 :root{
     --dark-blue: #363f5f;
 }
+
 *{
     padding: 0;
     margin: 0;
@@ -105,6 +106,7 @@ footer{
     opacity: .6;
 }
 
+/* ### Media Queries */
 @media screen and (max-width: 450px){
     .card [type="number"]{
         width: 150px;
